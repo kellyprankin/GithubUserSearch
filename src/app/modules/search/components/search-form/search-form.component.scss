@@ -7,12 +7,12 @@
   display: flex;
   width: 100%;
   justify-content: center;
-}
 
-.mat-card {
-  width: 50%;
-}
+  form {
+    width: 500px;
 
-.mat-form-field {
-  width: 100%;
+    mat-form-field {
+      width: 100%;
+    }
+  }
 }

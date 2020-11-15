@@ -2,9 +2,6 @@
     <div class="results-count" *ngIf="searchResults.length === 0">
         <span>No results found.</span>
     </div>
-    <div class="results-count" *ngIf="searchResults.length > 0">
-        <span>Showing results {{ startIndex + 1 }} - {{ endIndex }} of {{ searchResults.length }}</span>
-    </div>
 
     <mat-paginator
         [length]="searchResults.length"
@@ -20,14 +17,14 @@
                     <div class="profile-item">
                         <img class="avatar-image" [src]="searchResult.profileAvatarUrl" title="">
                     </div>
-                    <div class="profile-item">
-                        <span *ngIf="searchResult.bio !== ''">bio: {{ searchResult.bio }}</span>
+                    <div class="profile-item-large">
+                        <p>{{ searchResult.username }}</p>
                     </div>
                     <div class="profile-item">
-                        <span>follower count: {{ searchResult.followerCount }}</span>
+                        <p>followers: {{ searchResult.followerCount }}</p>
                     </div>
                     <div class="profile-item">
-                        <span>following count: {{ searchResult.followingCount }}</span>
+                        <p>following: {{ searchResult.followingCount }}</p>
                     </div>
                 </mat-card-content>
             </mat-card>
