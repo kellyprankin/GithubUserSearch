@@ -1,0 +1,43 @@
+<div class="search-results-grid">
+    <div class="results-count" *ngIf="searchResults.length === 0">
+        <span>No results found.</span>
+    </div>
+    <div class="results-count" *ngIf="searchResults.length > 0">
+        <span>Showing results {{ startIndex + 1 }} - {{ endIndex }} of {{ searchResults.length }}</span>
+    </div>
+
+    <mat-paginator
+        [length]="searchResults.length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="pageEvent = onPageChange($event)">
+    </mat-paginator>
+
+    <mat-grid-list cols="1" rowHeight="120px">
+        <mat-grid-tile *ngFor="let searchResult of pagedSearchResults">
+            <mat-card>
+                <mat-card-content (click)="viewUser(searchResult.htmlUrl)">
+                    <div class="profile-item">
+                        <img class="avatar-image" [src]="searchResult.profileAvatarUrl" title="">
+                    </div>
+                    <div class="profile-item">
+                        <span *ngIf="searchResult.bio !== ''">bio: {{ searchResult.bio }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <span>follower count: {{ searchResult.followerCount }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <span>following count: {{ searchResult.followingCount }}</span>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-paginator
+        [length]="searchResults.length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="pageEvent = onPageChange($event)">
+    </mat-paginator>
+</div> 

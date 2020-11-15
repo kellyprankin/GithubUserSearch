@@ -1,0 +1,53 @@
+.mat-grid-tile {
+  min-width: 300px;
+  margin-top: 0;
+}
+
+img.avatar-image {
+  width: 50px;
+  height: 50px;
+}
+
+.mat-card {
+  display: flex;
+  max-width: 50%;
+  min-width: 100px;
+  margin: 0 10px;
+  height: 60px;
+  flex: 1;
+}
+
+.mat-card:hover {
+  border: 1px;
+  background: lightgray;
+}
+
+.results-count {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-item {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  flex: 3;
+}
+
+.profile-text {
+  display: flex;
+}
+
+.mat-card-content {
+  display: flex;
+}
+
+::ng-deep .mat-paginator-container {
+  justify-content: center !important;
+}
+
+::ng-deep .mat-grid-tile {
+  padding-top: 0 !important;
+  height: 300px;
+}
